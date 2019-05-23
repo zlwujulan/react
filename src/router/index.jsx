@@ -1,11 +1,14 @@
 import React from 'react'
-import {hashHistory} from 'react-router'
-import index from '../pages/index'
+import { Router, Route } from 'react-router-dom'
+import createHistory from 'history/createBrowserHistory';
+import App from '../pages/index'
+
+const history = createHistory()
 const RouteConfig =(
-    <Router path="/" history={hashHistory}>
-          <div>
-              <Route path="/" component={index}></Route>
-          </div>
+    <Router  history={history}>
+            <Route path="/" component={App}>
+                  
+            </Route>
     </Router>
 )
 export default RouteConfig;

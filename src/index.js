@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import store from './store/index'
 import router from './router/index'
-const App = <h1>Redux Shopping Cart</h1>;
+import './static/css/common.css'
 // ReactDOM.render(<App />, document.getElementById('root'));
 render(
   <Provider store={store}>

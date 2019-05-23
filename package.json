@@ -2,6 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://images2015.cnblogs.com",
   "dependencies": {
     "@babel/core": "7.4.3",
     "@svgr/webpack": "4.1.0",
@@ -50,6 +51,7 @@
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "react-router-native": "^5.0.0",
+    "react-swipe": "5.1.1",
     "redux": "^4.0.1",
     "resolve": "1.10.0",
     "sass-loader": "7.1.0",
