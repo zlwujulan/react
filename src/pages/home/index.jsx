@@ -24,13 +24,15 @@ class Home extends React.Component{
     }
     componentDidMount(){
         console.log(this.props.state)
+        console.log(this.props.userinfo,32)
     }
 }
 
 function mapStateToProps(state) {
  
     return {
-        state:state
+        state:state,
+        userinfo:state.userinfo
     }
 }
 //action作为属性传入react中

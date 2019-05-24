@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './style.css'
 import history from '../../js/history'
 import SearchInput from '../SearchInput'
@@ -12,7 +13,9 @@ class HomeHeader extends React.Component{
         return(
             <div id="home-header" className="clear-fix">
                 <div className="home-header-left float-left">
-                    <span>{this.props.cityName}</span>
+                   <Link to="/city">
+                      <span>{this.props.cityName}</span>
+                   </Link>
                 </div>
                 <div className="home-header-right float-right">
 

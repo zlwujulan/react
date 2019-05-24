@@ -8,7 +8,7 @@ export default function userinfo(state=initialState,action){
         case USERINFO_UPDATE:{
             return {
                
-                city:action.city
+                city:action.data.city
             }
             
         }

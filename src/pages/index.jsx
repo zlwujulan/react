@@ -8,8 +8,7 @@ import {connect} from 'react-redux'
 import * as userInfoActionsFromOtherFile from '../store/action'
 import home from '../pages/home'
 import Search from '../pages/Serach/index'
-import { update } from '../store/action';
-import userinfo from '../store/reducer';
+import city from '../pages/City/index'
 class App extends React.Component {
     constructor(props,context){
         super(props,context)
@@ -27,6 +26,7 @@ class App extends React.Component {
                         
                     <Route path="/home" component={home}/>
                     <Route path="/Search" component={Search}/>
+                    <Route path="/city" component={city}/>
                     </div>
                     : <div>正在加载...</div>
                 }
@@ -47,6 +47,7 @@ class App extends React.Component {
             city:cityName
         })
         console.log(this.props.state)
+        console.log(this.props.userInfoActions)
            // 更改状态
            this.setState({
             initDone: true

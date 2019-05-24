@@ -2,6 +2,7 @@
 export const USERINFO_UPDATE = 'USERINFO_UPDATE'
 //设置城市  更改状态，传到reducer中去
 export function update(data){
+    console.log(data,123)
     return{
         type:USERINFO_UPDATE,
         data
