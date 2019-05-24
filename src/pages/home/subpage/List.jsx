@@ -25,21 +25,37 @@ class List extends React.Component{
                }
                {
          this.state.hasMore
-         ?<LoadMore />
+         ?<LoadMore isLoadingMore={this.state.isLoadingMore} loadMoreFn={this.loadMoreData.bind(this)}/>
          :''
                }
             </div>
         )
     }
     componentDidMount(){
-        let  myData = require('../../../mock/home/list.json')
-        console.log(myData)
-        this.setState({
-            data:myData.data
-        })
+    
+        this.resultHandle()
+      
         //获取首页数据
   
     }
-  
+    resultHandle(){
+        let  myData = require('../../../mock/home/list.json')
+        console.log(myData)
+        this.setState({
+            data:this.state.data.concat(myData.data),
+            hasMore:true
+        })
+    }
+    //加载更多
+    loadMoreData(){
+          // 记录状态
+          this.setState({
+            isLoadingMore: true
+        })
+        this.resultHandle()
+        this.setState({
+            isLoadingMore: false
+        })
+    }
 }
 export default List
