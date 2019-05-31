@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 // import store from '../store/index'
 import HomeHeader from '../../components/HomeHeader'
-import userinfo from '../../store/reducer';
+import userinfo from '../../store/userinfo';
 import Category from  '../../components/Category'
 import Ad from '../../pages/home/subpage/Ad'
 import List from '../../pages/home/subpage/List'
@@ -14,7 +14,7 @@ class Home extends React.Component{
     render(){
         return(
             <div>
-                <HomeHeader cityName ={this.props.state.default.city}></HomeHeader>
+                <HomeHeader cityName ={this.props.city}></HomeHeader>
                 <Category></Category>
                 <div style={{height: '15px'}}>{/* 分割线 */}</div>
                 <Ad></Ad>
@@ -31,8 +31,8 @@ class Home extends React.Component{
 function mapStateToProps(state) {
  
     return {
-        state:state,
-        userinfo:state.userinfo
+       
+        city:state.default.cityName
     }
 }
 //action作为属性传入react中

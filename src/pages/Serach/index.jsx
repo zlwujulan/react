@@ -1,7 +1,7 @@
 import React from 'react'
 
-// import SearchHeader from '../../components/SearchHeader'
-// import SearchList from './subpage/List'
+import SearchHeader from '../../components/SearchHeader'
+import SearchList from './subpage/List'
 
 class Search extends React.Component {
     constructor(props, context) {
@@ -9,13 +9,17 @@ class Search extends React.Component {
         this.state={}
         // this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     }
+    componentDidMount(){
+       
+        console.log(this.props.match.params.category)
+    }
     render() {
-        // const params = this.props.params
+        const params = this.props.match.params
         return (
             <div>
-                我是search
-                {/* <SearchHeader keyword={params.keyword}/>
-                <SearchList keyword={params.keyword} category={params.category}/> */}
+              <SearchHeader keyword={params.category}></SearchHeader>
+              <SearchList keyword={params.category}></SearchList>
+               
             </div>
         )
     }

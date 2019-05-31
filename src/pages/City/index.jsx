@@ -9,6 +9,7 @@ import CurrentCity from '../../components/CurrentCity/index'
 import { CITYNAME } from '../../config/localStoreKey'
 import localStore from '../../util/localStore'
 import history from '../../js/history'
+import { withRouter } from 'react-router'
 class City extends React.Component{
     constructor(props,context){
           super();
@@ -29,8 +30,8 @@ class City extends React.Component{
         )
     }
     componentDidMount(){
-    console.log(this.props.city)
-    console.log(this.state.default)
+   
+    console.log(this.props.userInfoAction,123456)
         //获取首页数据
   
     }
@@ -40,20 +41,22 @@ class City extends React.Component{
           return
         }
         //z修改reduxkjyt5
-      
+      const city = this.props.city
+      console.log(city,123456787654321)
+
        
          this.props.userInfoAction.update({newCity})
         // 修改 cookie
         localStore.setItem(CITYNAME, newCity)
-        // history.push('/home')
+        history.push('/home')
     }
     
 }
 
 function mapstateToProps(state){
-    console.log(state,11111)
+   console.log(state)
     return{
-      city:state.default.city
+      city:state.default.cityName
     }
 }
 function mapDispatchToProps(dispatch){
